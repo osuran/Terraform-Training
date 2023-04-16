@@ -4,9 +4,8 @@ variable"AWS_REGION"{
     default = "ap-southeast-1"
 }
 
-variable "AMIs"
-{
-    type = "map'
+variable "AMIs"{
+    type = "map"
     default = {
         ap-southeast-1 = "ami-04ddf30efb5385f93"
     }
