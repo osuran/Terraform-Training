@@ -2,6 +2,7 @@
 resource "aws_ebs_volume" "ebs-volume" {
   availability_zone = data.aws_availability_zones.available.names[0]
   size              = 100
+  delete_on_termination = true
 }
 
 resource "aws_volume_attachment" "ebs_attachment" {
