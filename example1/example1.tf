@@ -8,4 +8,8 @@ region     = "ap-northeast-2"
 resource "aws_instance" "vm-terraform" {
   ami           = "ami-0a306845f8cfbd41a"
   instance_type = "t2.micro"
+
+  tags = {
+    Name = "TF Ec2 - "
+  }
 }
