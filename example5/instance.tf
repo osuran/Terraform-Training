@@ -14,6 +14,10 @@ resource "aws_instance" "vm-terraform" {
     encrypted             = true
     delete_on_termination = true
   }
+
+  tags = {
+    Name = "TF Ec2 - ${var.NAME} "
+  }
 }
 
 data "aws_availability_zones" "available" {}

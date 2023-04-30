@@ -11,3 +11,5 @@ variable "AMIs"{
         ap-northeast-2 = "ami-0a306845f8cfbd41a"
     }
 }
+
+variable "NAME" {}
