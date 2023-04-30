@@ -12,4 +12,6 @@ variable "AMIs"{
     }
 }
 
-variable "NAME" {}
+variable "NAME" {
+    default = "Add Your Name"
+}

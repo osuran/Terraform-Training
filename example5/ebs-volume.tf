@@ -2,6 +2,10 @@
 resource "aws_ebs_volume" "ebs-volume" {
   availability_zone = aws_instance.vm-terraform.availability_zone
   size              = 100
+
+   tags = {
+    Name = "EBS Volume - ${var.NAME} "
+  }
 }
 
 resource "aws_volume_attachment" "ebs_attachment" {

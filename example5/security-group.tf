@@ -9,4 +9,8 @@ resource "aws_security_group" "sg_allow_ssh" {
     cidr_blocks      = ["0.0.0.0/0"]
   }
 
+ tags = {
+    Name = "Security Group - ${var.NAME} "
+  }
+
 }
