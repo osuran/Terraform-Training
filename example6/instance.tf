@@ -1,6 +1,4 @@
 
-
-
 module "instance_module" {
         source = "./modules/instance"
         ami = "${var.ami}"
