@@ -34,7 +34,7 @@ resource "aws_eip" "eip" {
   instance = aws_instance.vm-terraform.id
   vpc      = true
 
-   tags = {
+  tags = {
     Name = "EIP - ${var.NAME} "
   }
 }
