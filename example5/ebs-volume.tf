@@ -1,6 +1,6 @@
 
 resource "aws_ebs_volume" "ebs-volume" {
-  availability_zone = data.aws_availability_zones.available.names[0]
+  availability_zone = aws_instance.vm-terraform.availability_zone
   size              = 100
   delete_on_termination = true
 }
