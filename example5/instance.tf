@@ -20,6 +20,6 @@ resource "aws_instance" "vm-terraform" {
   }
 }
 
-data "aws_availability_zones" "available" {}
+
 
 
