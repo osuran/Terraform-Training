@@ -17,7 +17,14 @@ resource "aws_security_group" "asia_pacific_sg" {
     to_port          = "80"
     from_port          = "80"
     protocol         = "tcp"
-    cidr_blocks      = "0.0.0.0/0"
+    cidr_blocks      = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    to_port          = "22"
+    from_port          = "22"
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
   }
 
 }
