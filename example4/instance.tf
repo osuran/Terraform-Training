@@ -4,7 +4,7 @@ resource "aws_instance" "vm-terraform" {
   
   vpc_security_group_ids = ["${aws_security_group.asia_pacific_sg.id}"]
 
-  userdata = file("./userdata.sh")
+  user_data = file("./userdata.sh")
 
  tags = {
     Name = "TF Ec2 - "
