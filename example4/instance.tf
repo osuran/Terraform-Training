@@ -8,7 +8,7 @@ resource "aws_instance" "vm-terraform" {
   user_data = "${file("userdata.sh")}"
 
  tags = {
-    Name = "TF Ec2 - "
+    Name = "TF Ec2 - ${var.NAME} "
   }
 }
 

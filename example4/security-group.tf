@@ -4,7 +4,7 @@ services = ["ec2"]
 }
 
 resource "aws_security_group" "asia_pacific_sg" {
-name = "asia pacific allow"
+name = "asia pacific allow SG ${var.NAME}"
 
   ingress {
     to_port          = "22"
@@ -36,7 +36,7 @@ egress {
 }
 
 resource "aws_security_group" "httpd_sg" {
-name = "asia pacific allow"
+name = "httpd allow SG ${var.NAME}"
 
 
   ingress {
