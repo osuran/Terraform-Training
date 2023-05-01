@@ -13,4 +13,11 @@ resource "aws_security_group" "asia_pacific_sg" {
     cidr_blocks      = data.aws_ip_ranges.asia_pacific_ec2.cidr_blocks
   }
 
+  ingress {
+    to_port          = "80"
+    from_port          = "80"
+    protocol         = "tcp"
+    cidr_blocks      = data.aws_ip_ranges.asia_pacific_ec2.cidr_blocks
+  }
+
 }
