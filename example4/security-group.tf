@@ -1,7 +1,3 @@
-data "aws_ip_ranges" "asia_pacific_ec2" {
-regions  = ["ap-southeast-2"]
-services = ["ec2"]
-}
 
 resource "aws_security_group" "asia_pacific_sg" {
 name = "asia pacific allow SG ${var.NAME}"
