@@ -9,19 +9,6 @@ name = "asia pacific allow SG ${var.NAME}"
     cidr_blocks      = data.aws_ip_ranges.asia_pacific_ec2.cidr_blocks
   }
 
-  ingress {
-    to_port          = "80"
-    from_port          = "80"
-    protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    to_port          = "22"
-    from_port          = "22"
-    protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
-  }
 
 egress {
   from_port   = 0

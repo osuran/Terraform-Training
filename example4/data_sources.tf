@@ -8,7 +8,7 @@ data "aws_instances" "running_ec2s" {
     instance_state_names = ["running"]
 }
 
-output "ip" {
+output "Public_IPs" {
     value = "${data.aws_instances.running_ec2s.public_ips}"
   
   }
