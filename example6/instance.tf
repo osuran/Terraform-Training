@@ -21,7 +21,7 @@ module "ec2_instance" {
   name = "single-instance"
 
   instance_type          = "t2.micro"
-  key_name               = "user1"
+  key_name               = "osura-seoul"
   
   }
 
