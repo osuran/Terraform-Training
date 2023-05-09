@@ -15,4 +15,14 @@ module "instance_module_GW" {
 
 } 
 
+module "ec2_instance" {
+  source  = "github.com/terraform-aws-modules/terraform-aws-ec2-instance"
+
+  name = "single-instance"
+
+  instance_type          = "t2.micro"
+  key_name               = "user1"
+  
+  }
+
 
