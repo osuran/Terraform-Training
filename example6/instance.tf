@@ -8,7 +8,7 @@ module "instance_module_Hub" {
         ami = "${var.ami}"
         instance_type = "${var.instance_type}"
         instance_name = "${var.instance_name} Ec2 from TF local module"
-        iam_role = "${module.module_iam_role.output_name}"
+        iam_role = "${module.module_iam_role_hub.output_name}"
 
 } 
 
@@ -19,7 +19,7 @@ module "ec2_instance" {
         name = "${var.instance_name} Ec2 from TF community module"
         instance_type          = "t2.micro"
         key_name               = "osura-seoul"
-        iam_instance_profile = "${module.module_iam_role.output_name}"
+        iam_instance_profile = "${module.module_iam_role_hub.output_name}"
   
   }
 
