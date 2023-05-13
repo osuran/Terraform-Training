@@ -37,10 +37,12 @@ resource "aws_iam_role" "assume_role" {
   })
 }
 
-
-
+resource "aws_iam_instance_profile" "iam_profile" {
+  name = "test_profile"
+  role = aws_iam_role.assume_role.name
+}
 
 output "output_name" {
-  value = aws_iam_role.assume_role.name
+  value = aws_iam_instance_profile.iam_profile.name
 
 }
