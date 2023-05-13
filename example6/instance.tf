@@ -17,7 +17,7 @@ module "instance_module_GW" {
         ami = "${var.ami}"
         instance_type = "${var.instance_type}"
         instance_name = "GW"
-        iam_instance_profile = iam-role.name
+      //  iam_instance_profile = iam-role.name
 
 } 
 
