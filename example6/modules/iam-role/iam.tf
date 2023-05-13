@@ -19,3 +19,5 @@ output "output_name" {
   value = aws_iam_role.assume_role.name
 
 }
+
+}
