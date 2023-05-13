@@ -19,7 +19,7 @@ module "instance_module_Hub" {
 
   instance_type          = "t2.micro"
   key_name               = "osura-seoul"
-  iam_role = "${module.module_iam_role.output_name}"
+  iam_instance_profile = "${module.module_iam_role.output_name}"
   
   }
 
