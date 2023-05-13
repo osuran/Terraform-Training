@@ -35,4 +35,6 @@ variable "name"{
   default       = "dummy-name"
 }
 
-variable "iam_role"{}
+variable "iam_role"{
+  default ="Terraform_admin"
+}
