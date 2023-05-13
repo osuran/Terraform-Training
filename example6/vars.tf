@@ -34,3 +34,5 @@ variable "name"{
   type          = string
   default       = "dummy-name"
 }
+
+variable "iam_role"{}
