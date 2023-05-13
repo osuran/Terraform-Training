@@ -14,7 +14,7 @@ module "instance_module_GW" {
         ami = "${var.ami}"
         instance_type = "${var.instance_type}"
         instance_name = "GW"
-        am_instance_profile = iam-role.name
+        iam_instance_profile = iam-role.name
 
 } 
 
@@ -29,7 +29,7 @@ module "ec2_instance" {
 
   instance_type          = "t2.micro"
   key_name               = "osura-seoul"
-  am_instance_profile = iam-role.name
+  iam_instance_profile = iam-role.name
   
   }
 
