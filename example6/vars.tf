@@ -24,3 +24,5 @@ variable "key_name" {
   type          = string
   default       = "osura-seoul"
 }
+
+variable "iam_role_name"{}
