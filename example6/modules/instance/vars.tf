@@ -27,3 +27,4 @@ variable "key_name" {
   default       = "osura-seoul"
 }
 
+variable "iam_role"{}
