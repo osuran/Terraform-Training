@@ -29,3 +29,8 @@ variable "iam_instance_profile"{
   type          = string
   default       = "dummy-role"
 }
+
+variable "name"{
+  type          = string
+  default       = "dummy-name"
+}
