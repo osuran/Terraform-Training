@@ -27,4 +27,4 @@ variable "key_name" {
   default       = "osura-seoul"
 }
 
-variable "iam_role_name"{}
+variable "iam_instance_profile"{}
