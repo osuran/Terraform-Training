@@ -3,7 +3,7 @@ module "module_iam_role_hub" {
 }
 
 module "module_iam_role_gw" {
-        source = "./modules/iam-role/iam-role-hub"
+        source = "./modules/iam-role/iam-role-gw"
 }
 
 
