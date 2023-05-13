@@ -12,6 +12,15 @@ module "instance_module_Hub" {
 } 
 
 
+   module "ec2_instance" {
+  source  = "github.com/terraform-aws-modules/terraform-aws-ec2-instance"
 
+  name = "single-instance"
+
+  instance_type          = "t2.micro"
+  key_name               = "osura-seoul"
+  iam_role = "${module.module_iam_role.output_name}"
+  
+  }
 
 
