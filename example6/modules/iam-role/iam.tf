@@ -19,17 +19,13 @@ EOF
 
 
 
-
-
 resource "aws_iam_role" "assume_role" {
   name = "assume-role-gw"
+  assume_role_policy = aws_iam_policy.sts_assume_policy.arn
 
 }
 
-resource "aws_iam_role_policy_attachment" "role_policy_attachment" {
-  role       = aws_iam_role.assume_role.name
-  policy_arn = aws_iam_policy.sts_assume_policy.arn
-}
+
 
 
 
