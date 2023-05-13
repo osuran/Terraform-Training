@@ -7,7 +7,7 @@ resource "aws_instance" "vm-terraform" {
  
 
     tags = {
-      Name = "TF Ec2 - ${var.instance_name} "
+      Name = "${var.instance_name} "
     }
   
 }
