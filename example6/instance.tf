@@ -1,4 +1,4 @@
-module "iam-role" {
+module "iam-role-resource" {
         source = "./modules/iam-role"
 }
 
