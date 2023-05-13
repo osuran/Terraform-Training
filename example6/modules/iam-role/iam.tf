@@ -15,9 +15,11 @@ resource "aws_iam_role" "assume_role" {
 }
 EOF
 
-output "output_name" {
-  value = aws_iam_role.assume_role.name
+
 
 }
+
+output "output_name" {
+  value = aws_iam_role.assume_role.name
 
 }
