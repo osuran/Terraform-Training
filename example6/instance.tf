@@ -2,6 +2,11 @@ module "module_iam_role_hub" {
         source = "./modules/iam-role/iam-role-hub"
 }
 
+module "module_iam_role_gw" {
+        source = "./modules/iam-role/iam-role-hub"
+}
+
+
 module "instance_module_Hub" {
 
         source = "./modules/instance"
@@ -19,7 +24,7 @@ module "ec2_instance" {
         name = "${var.instance_name} Ec2 from TF community module"
         instance_type          = "t2.micro"
         key_name               = "osura-seoul"
-        iam_instance_profile = "${module.module_iam_role_hub.output_name}"
+        iam_instance_profile = "${module.module_iam_role_gw.output_name}"
   
   }
 
