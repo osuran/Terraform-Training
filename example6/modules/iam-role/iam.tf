@@ -1,4 +1,4 @@
-resource "aws_iam_policy" "sts_assume_policy" {
+resource "aws_iam_role_policy" "sts_assume_policy" {
   name        = "sts-assume-policy"
   role = aws_iam_role.assume_role.id
 
