@@ -1,8 +1,8 @@
 resource "aws_iam_policy" "sts_assume_policy" {
   name        = "sts-assume-policy"
-  description = "An example IAM policy"
+  role = aws_iam_role.assume_role.id
 
-  policy = <<EOF
+  policy = jsonencode(
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -13,15 +13,14 @@ resource "aws_iam_policy" "sts_assume_policy" {
             "Resource": "*"
         }
     ]
-}
-EOF
+})
+
 }
 
 
 
 resource "aws_iam_role" "assume_role" {
   name = "assume-role-gw"
-  assume_role_policy = aws_iam_policy.sts_assume_policy.arn
 
 }
 
