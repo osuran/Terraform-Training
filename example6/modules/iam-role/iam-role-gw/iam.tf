@@ -21,3 +21,8 @@ resource "aws_iam_role" "role" {
   path               = "/"
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
 }
+
+output "output_name" {
+  value = aws_iam_instance_profile.gw_profile.name
+
+}
