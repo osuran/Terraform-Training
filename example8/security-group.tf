@@ -26,8 +26,6 @@ resource "aws_security_group" "ftp_dns_sg" {
   for_each = toset(var.ftp_dns_ports)
   name = "port ${each.value} allow ${var.NAME}"
 
-
-
   ingress {
       to_port          = "${each.value}"
       from_port          = "${each.value}"
