@@ -25,6 +25,7 @@ module "instance_module_Hub" {
 
 module "instance_module_gw" {
 
+        var.server-type = "gw"
         source = "./modules/instance"
         ami = "${var.ami}"
         instance_type = "${var.instance_type}"
@@ -32,7 +33,7 @@ module "instance_module_gw" {
         iam_role = "${var.server-type == "hub" ? module.module_iam_role_hub.output_name: module.module_iam_role_gw.output_name}"
     //    iam_role = "${module.module_iam_role_hub.output_name}"
 
-        server-type = "gw"
+        server-type = "${var.server-type} "
         
 
 } 
