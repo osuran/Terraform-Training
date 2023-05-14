@@ -1,50 +1,28 @@
-resource "aws_iam_role_policy" "sts_assume_policy" {
-  name        = "${var.name}-sts-assume-policy"
-  role = aws_iam_role.assume_role.id
+resource "aws_iam_instance_profile" "gw_profile" {
+  name = "${var.name}-gw_profile"
+  role = aws_iam_role.role.name
+}
 
-  policy = jsonencode(
-    {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-            "Sid": "VisualEditor0",
-            "Effect": "Allow",
-            "Action": "sts:AssumeRole",
-            "Resource": "*"
-        }
-      ]
+data "aws_iam_policy_document" "assume_role" {
+  statement {
+    effect = "Allow"
+
+    principals {
+      type        = "Service"
+      identifiers = ["ec2.amazonaws.com"]
     }
-  )
 
+    actions = ["sts:AssumeRole"]
+  }
 }
 
-
-
-resource "aws_iam_role" "assume_role" {
-  name = "${var.name}-assume_role"
-
-  assume_role_policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Action = "sts:AssumeRole"
-        Effect = "Allow"
-        Sid    = ""
-        Principal = {
-          Service = "ec2.amazonaws.com"
-        }
-      },
-    ]
-  })
-
-}
-
-resource "aws_iam_instance_profile" "iam_profile" {
-  name = "${var.name}_profile"
-  role = aws_iam_role.assume_role.name
+resource "aws_iam_role" "role" {
+  name               = "${var.name}-gw_role"
+  path               = "/"
+  assume_role_policy = data.aws_iam_policy_document.assume_role.json
 }
 
 output "output_name" {
-  value = aws_iam_instance_profile.iam_profile.name
+  value = aws_iam_instance_profile.gw_profile.name
 
 }
