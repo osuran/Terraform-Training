@@ -33,7 +33,7 @@ name = "http allow ${var.NAME}"
   }
 
   tags{
-    Name = ${var.NAME}"
+    Name = "${var.NAME}"
   }
 }
 
