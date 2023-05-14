@@ -1,4 +1,3 @@
-
 provider "aws" {
 
   region     = "ap-northeast-2"
@@ -9,15 +8,15 @@ variable "NAME" {
 }
 
 variable project_tags{
-  type = map(string)
+  type    = map(string)
   default = {
-    Env = "Prod"
-    Location = "Singapore"
+    Env       = "Prod"
+    Location  = "Singapore"
   }
 }
 
 variable "ftp_dns_ports" {
-  type = list(string)
+  type    = list(string)
   default = ["53","21"]
 }
 
