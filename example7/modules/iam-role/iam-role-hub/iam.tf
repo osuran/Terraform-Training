@@ -16,12 +16,16 @@ resource "aws_iam_role_policy" "sts_assume_policy" {
     }
   )
 
+  tags = {
+      Name = "${var.name} IAM Policy"
+    }
+
 }
 
 
 
 resource "aws_iam_role" "assume_role" {
-  name = "assume_role"
+  name = "${var.name}_assume_role"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
@@ -36,10 +40,11 @@ resource "aws_iam_role" "assume_role" {
       },
     ]
   })
+
 }
 
 resource "aws_iam_instance_profile" "iam_profile" {
-  name = "test_profile"
+  name = "${var.name}_profile"
   role = aws_iam_role.assume_role.name
 }
 

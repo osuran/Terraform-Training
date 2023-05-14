@@ -1,5 +1,6 @@
 module "module_iam_role_hub" {
         source = "./modules/iam-role/iam-role-hub"
+        name = "${var.instance_name}"
 }
 
 module "module_iam_role_gw" {
