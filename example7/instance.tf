@@ -8,9 +8,7 @@ module "module_iam_role_gw" {
         name = "${var.instance_name}"
 }
 
-locals {
-        server-type-local="${var.server-type}"
-}
+
 module "instance_module_Hub" {
 
         source = "./modules/instance"
