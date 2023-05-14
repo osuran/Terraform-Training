@@ -8,7 +8,7 @@ module "module_iam_role_gw" {
         name = "${var.instance_name}"
 }
 
-loals {
+locals {
         server-type-local="${var.server-type}"
 }
 module "instance_module_Hub" {
