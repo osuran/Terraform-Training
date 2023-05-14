@@ -8,8 +8,10 @@ variable "NAME" {
     default = "Add Your Name"
 }
 
-resource "aws_security_group" "httpd_sg" {
-name = "httpd allow SG ${var.NAME}"
+Name = "Osura"
+
+resource "aws_security_group" "http_sg" {
+name = "http allow ${var.NAME}"
 
 
   dynamic ingress {
@@ -28,6 +30,10 @@ name = "httpd allow SG ${var.NAME}"
   to_port     = 0
   protocol    = "-1"
   cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags{
+    Name = ${var.NAME}"
   }
 }
 
