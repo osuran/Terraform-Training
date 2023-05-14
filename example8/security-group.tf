@@ -13,6 +13,7 @@ variable project_tags{
   default = {
     Env = "Prod"
     Location = "Singapore"
+    Name = "${var.NAME}"
 
   }
 }
@@ -40,7 +41,7 @@ name = "http allow ${var.NAME}"
   }
 
   tags = {
-   // Name = "${var.NAME}"
+
     for key, value in var.project_tags : key => value
   }
 }
