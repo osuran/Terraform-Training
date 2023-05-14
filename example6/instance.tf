@@ -16,7 +16,7 @@ module "instance_module_2" {
         source          = "github.com/terraform-aws-modules/terraform-aws-ec2-instance"
         ami             = "${var.ami}"
         name            = "${var.instance_name} Ec2 from TF community module"
-        instance_type   = "{var.instance_type}"
+        instance_type   = "t2.micro"
         key_name        = "${var.key_name}"
   
   }
