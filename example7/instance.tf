@@ -25,7 +25,7 @@ module "instance_module_gw" {
         source          = "./modules/instance"
         ami             = "${var.ami}"
         instance_type   = "${var.instance_type}"
-        instance_name   = "${var.server-type == "gw" ? "${var.instance_name} Hub Server" : "${var.instance_name} GW Server"}"
+        instance_name   = "${var.server-type == "gw" ? "${var.instance_name} Hub Server" : "${var.instance_name} GW Server ${var.count}"}"
         iam_role        = "${var.server-type == "gw" ? module.module_iam_role_hub.output_name: module.module_iam_role_gw.output_name}"
         server-type     = "${var.server-type}"
         count = 2
