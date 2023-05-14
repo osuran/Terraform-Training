@@ -24,7 +24,10 @@ module "instance_module_Hub" {
 
 } 
 
-server-type-local="gw"
+locals {
+        server-type-local="gw"
+}
+
 
 module "instance_module_gw" {
 
