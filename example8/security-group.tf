@@ -8,6 +8,15 @@ variable "NAME" {
     default = "Add Your Name"
 }
 
+variable project_tags{
+  type = map(string)
+  default = {
+    Env = "Prod"
+    Location = "Singapore"
+
+  }
+}
+
 resource "aws_security_group" "http_sg" {
 name = "http allow ${var.NAME}"
 
@@ -32,6 +41,7 @@ name = "http allow ${var.NAME}"
 
   tags = {
     Name = "${var.NAME}"
+    for key, value in var.project_tags : key => value
   }
 }
 
