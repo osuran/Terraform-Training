@@ -4,8 +4,6 @@ variable "AWS_REGION"{
     default = "ap-northeast-2"
 }
 
-
-
 variable "ami" {
   type          = string
   default       = "ami-0a306845f8cfbd41a"
