@@ -22,22 +22,19 @@ module "instance_module_Hub" {
 
 } 
 
-locals {
-        server-type-local="gw"
-}
+
 
 
 module "instance_module_gw" {
 
         
         source = "./modules/instance"
-        server-type = "gw"
         ami = "${var.ami}"
         instance_type = "${var.instance_type}"
-        instance_name = "${local.server-type-local == "hub" ? "${var.instance_name} Hub Server" : "${var.instance_name} GW Server"}"
-        iam_role = "${local.server-type-local == "hub" ? module.module_iam_role_hub.output_name: module.module_iam_role_gw.output_name}"
+        instance_name = "${var.server-type == "gw" ? "${var.instance_name} Hub Server" : "${var.instance_name} GW Server"}"
+        iam_role = "${var.server-type == "gw" ? module.module_iam_role_hub.output_name: module.module_iam_role_gw.output_name}"
 
-  //      server-type = "${local.server-type-local} "
+        server-type = "${var.server-type}"
         
 
 } 

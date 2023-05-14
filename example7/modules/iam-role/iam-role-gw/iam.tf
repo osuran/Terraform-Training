@@ -40,7 +40,7 @@ resource "aws_iam_role" "assume_role" {
 }
 
 resource "aws_iam_instance_profile" "iam_profile" {
-  name = "${var.name}_profile"
+  name = "${var.name}_gw_profile"
   role = aws_iam_role.assume_role.name
 }
 

@@ -1,5 +1,5 @@
 resource "aws_iam_instance_profile" "gw_profile" {
-  name = "${var.name}-gw_profile"
+  name = "${var.name}-hub_profile"
   role = aws_iam_role.role.name
 }
 
