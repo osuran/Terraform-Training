@@ -1,6 +1,6 @@
 
 
-module "instance_module_Hub" {
+module "instance_module" {
 
         source = "./modules/instance"
         ami = "${var.ami}"
@@ -15,7 +15,7 @@ module "ec2_instance" {
         source  = "github.com/terraform-aws-modules/terraform-aws-ec2-instance"
         name = "${var.instance_name} Ec2 from TF community module"
         instance_type          = "t2.micro"
-        key_name               = "osura-seoul"
+        key_name               = "${var.key_name}"
   
   }
 
