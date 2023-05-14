@@ -30,7 +30,7 @@ name = "http allow ${var.NAME}"
   cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags{
+  tags = {
     Name = "${var.NAME}"
   }
 }
