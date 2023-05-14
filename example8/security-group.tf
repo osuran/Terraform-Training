@@ -13,8 +13,37 @@ variable project_tags{
   default = {
     Env = "Prod"
     Location = "Singapore"
-    Name = "${var.NAME}"
+  }
+}
 
+variable "ftp_dns_ports" {
+  type = list(string)
+  default = ["53","21"]
+}
+
+resource "aws_security_group" "ftp_dns_sg" {
+name = "ftp dns allow ${var.NAME}"
+
+for_each = toset(var.ftp_dns_ports)
+
+ingress {
+    to_port          = "${each.value}"
+    from_port          = "${each.value}"
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+  }
+
+egress {
+  from_port   = 0
+  to_port     = 0
+  protocol    = "-1"
+  cidr_blocks = ["0.0.0.0/0"]
+  
+  }
+
+  tags = {
+
+    for key, value in var.project_tags : key => value
   }
 }
 
