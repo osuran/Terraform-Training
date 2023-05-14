@@ -37,5 +37,11 @@ variable "name"{
 
 variable "iam_role"{
    type          = string
-  default ="Terraform_admin"
+   default ="Terraform_admin"
 }
+
+variable "server-type"{
+   type          = string
+   default ="hub"
+}
+
