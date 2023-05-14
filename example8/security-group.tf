@@ -22,24 +22,26 @@ variable "ftp_dns_ports" {
 }
 
 resource "aws_security_group" "ftp_dns_sg" {
-name = "ftp dns allow ${var.NAME}"
 
-for_each = toset(var.ftp_dns_ports)
+  for_each = toset(var.ftp_dns_ports)
+  name = "port ${each.value} allow ${var.NAME}"
 
-ingress {
-    to_port          = "${each.value}"
-    from_port          = "${each.value}"
-    protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
-  }
 
-egress {
-  from_port   = 0
-  to_port     = 0
-  protocol    = "-1"
-  cidr_blocks = ["0.0.0.0/0"]
-  
-  }
+
+  ingress {
+      to_port          = "${each.value}"
+      from_port          = "${each.value}"
+      protocol         = "tcp"
+      cidr_blocks      = ["0.0.0.0/0"]
+    }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+
+    }
 
   tags = {
 
