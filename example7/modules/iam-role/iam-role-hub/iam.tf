@@ -1,5 +1,5 @@
 resource "aws_iam_role_policy" "sts_assume_policy" {
-  name        = "${var.name}_sts-assume-policy"
+  name        = "${var.name}-sts-assume-policy"
   role = aws_iam_role.assume_role.id
 
   policy = jsonencode(
