@@ -21,7 +21,7 @@ resource "aws_iam_role_policy" "sts_assume_policy" {
 
 
 resource "aws_iam_role" "assume_role" {
-  name = "${var.name}_assume_role"
+  name = "${var.name}-assume_role"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
