@@ -25,7 +25,7 @@ module "instance_module_Hub" {
 
 module "instance_module_gw" {
 
-        var.server-type = "gw"
+        ${var.server-type} = "gw"
         source = "./modules/instance"
         ami = "${var.ami}"
         instance_type = "${var.instance_type}"
