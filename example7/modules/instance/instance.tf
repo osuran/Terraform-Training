@@ -7,7 +7,8 @@ resource "aws_instance" "vm-terraform" {
  
 
     tags = {
-      Name = "${var.instance_name} "
+      Name = "${var.instance_name}"
+      "server-type" = "${var.server-type} "
     }
   
 }

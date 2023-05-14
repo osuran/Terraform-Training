@@ -28,3 +28,8 @@ variable "key_name" {
 }
 
 variable "iam_role"{}
+
+variable "server-type"{
+   type          = string
+   default ="hub"
+}

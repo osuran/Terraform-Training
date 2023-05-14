@@ -18,9 +18,8 @@ module "instance_module_Hub" {
  //       instance_name = "${var.instance_name} Hub Server"
         iam_role = "${module.module_iam_role_hub.output_name}"
 
-        tags = {
-                server-type = "${var.server-type} "
-        }
+        server-type = "${var.server-type} "
+        
 
 } 
 
