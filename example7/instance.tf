@@ -8,7 +8,9 @@ module "module_iam_role_gw" {
         name = "${var.instance_name}"
 }
 
-
+loals {
+        server-type-local="${var.server-type}"
+}
 module "instance_module_Hub" {
 
         source = "./modules/instance"
@@ -16,12 +18,13 @@ module "instance_module_Hub" {
         instance_type = "${var.instance_type}"
         instance_name = "${var.server-type == "hub" ? "${var.instance_name} Hub Server" : "${var.instance_name} GW Server"}"
         iam_role = "${var.server-type == "hub" ? module.module_iam_role_hub.output_name: module.module_iam_role_gw.output_name}"
-    //    iam_role = "${module.module_iam_role_hub.output_name}"
 
-        server-type = "${var.server-type} "
+        server-type = "${var.server-type}"
         
 
 } 
+
+server-type-local="gw"
 
 module "instance_module_gw" {
 
@@ -30,11 +33,10 @@ module "instance_module_gw" {
         server-type = "gw"
         ami = "${var.ami}"
         instance_type = "${var.instance_type}"
-        instance_name = "${var.server-type == "hub" ? "${var.instance_name} Hub Server" : "${var.instance_name} GW Server"}"
-        iam_role = "${var.server-type == "hub" ? module.module_iam_role_hub.output_name: module.module_iam_role_gw.output_name}"
-    //    iam_role = "${module.module_iam_role_hub.output_name}"
+        instance_name = "${local.server-type-local == "hub" ? "${var.instance_name} Hub Server" : "${var.instance_name} GW Server"}"
+        iam_role = "${local.server-type-local == "hub" ? module.module_iam_role_hub.output_name: module.module_iam_role_gw.output_name}"
 
-  //      server-type = "${var.server-type} "
+  //      server-type = "${local.server-type-local} "
         
 
 } 
