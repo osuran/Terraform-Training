@@ -8,8 +8,6 @@ variable "NAME" {
     default = "Add Your Name"
 }
 
-Name = "Osura"
-
 resource "aws_security_group" "http_sg" {
 name = "http allow ${var.NAME}"
 
