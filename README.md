@@ -6,5 +6,5 @@ example 3 - Map varialble and outputting attributes
 example 4 - Data sources and user data  
 example 5 - Creating VPC, subnets, internet gateway, EIP, route table, EC2, EBS volume and a key pair  
 example 6 - Module development with EC2 module  
-example 7 - Module development with IAM and EC2, and usge of conditions   
+example 7 - Module development with IAM and EC2, and usage of conditions   
 example 8 - Usage of loops  
