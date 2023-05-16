@@ -1,4 +1,4 @@
-# terraform-training
+# terraform-training  
 This repo provides examples for lab sessions for the Terraform Training series - 2023 for Imperva Inc   
 example 1 - A simple and basic Terraform script  
 example 2 - segregating a single Terraform file into mutiple files  
